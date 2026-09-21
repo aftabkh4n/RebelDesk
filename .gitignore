@@ -1,0 +1,71 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+*.pdb
+*.dll.config
+publish/
+TestResults/
+coverage/
+*.coverage
+*.trx
+
+# Node / Vite
+node_modules/
+dist/
+dist-ssr/
+.pnp/
+.pnp.js
+.yarn/
+.parcel-cache/
+.vite/
+*.tsbuildinfo
+
+# IDE
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Secrets / local config
+appsettings.Development.local.json
+appsettings.Production.local.json
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.key
+secrets/
+turnserver.local.conf
+
+# Data
+data/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+
+# Agent runtime
+agent/pairing.json
+agent/device.json

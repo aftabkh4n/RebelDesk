@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "language": "fr",
+    "needs-review": true,
+    "note": "Machine-translated seed. Must be reviewed by a native French speaker before v1.0."
+  },
+  "app": {
+    "title": "RebelDesk",
+    "tagline": "Bureau à distance auto-hébergé"
+  },
+  "nav": {
+    "devices": "Appareils",
+    "logout": "Se déconnecter",
+    "language": "Langue"
+  },
+  "login": {
+    "title": "Connexion",
+    "email": "E-mail",
+    "displayName": "Nom affiché",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "register": "Créer un compte",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "noAccount": "Nouveau ?",
+    "signInInstead": "Se connecter",
+    "createInstead": "Créer un compte",
+    "errors": {
+      "invalidCredentials": "E-mail ou mot de passe incorrect.",
+      "emailInUse": "Cet e-mail est déjà utilisé.",
+      "passwordTooShort": "Le mot de passe doit contenir au moins 8 caractères.",
+      "generic": "Une erreur s'est produite. Réessayez."
+    }
+  },
+  "devices": {
+    "title": "Vos appareils",
+    "empty": "Aucun appareil appairé pour l'instant. Ajoutez-en un ci-dessous.",
+    "online": "En ligne",
+    "offline": "Hors ligne",
+    "connect": "Démarrer la session",
+    "connecting": "Demande de session…",
+    "revoke": "Révoquer",
+    "confirmRevoke": "Révoquer cet appareil ? L'agent perdra immédiatement l'accès.",
+    "addTitle": "Appairer un nouvel appareil",
+    "addHint": "Installez l'agent RebelDesk sur l'ordinateur Windows à contrôler, puis saisissez ce code lorsqu'il vous le demande.",
+    "generateCode": "Générer un code d'appairage",
+    "codeExpires": "Expire à {{time}}",
+    "copyCode": "Copier"
+  },
+  "session": {
+    "connecting": "Connexion à {{name}}…",
+    "waitingApproval": "En attente de l'approbation de l'hôte…",
+    "connected": "Connecté",
+    "reconnecting": "Reconnexion…",
+    "disconnect": "Terminer la session",
+    "endedByHost": "L'hôte a terminé la session.",
+    "endedByViewer": "Vous avez terminé la session.",
+    "rejected": "L'hôte a rejeté cette session.",
+    "agentOffline": "L'hôte est hors ligne. Réessayez plus tard.",
+    "fullscreen": "Plein écran",
+    "inputBlocked": "Cliquez dans l'écran pour activer les entrées.",
+    "unattendedWarning": "Demandez à l'hôte d'être présent. RebelDesk exige une approbation explicite sur l'hôte."
+  },
+  "language": {
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français",
+    "nl": "Nederlands",
+    "ar": "العربية"
+  }
+}

@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  server:
+    name: Server (build + test)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore
+        run: dotnet restore server/RebelDesk.Server.csproj
+      - name: Build
+        run: dotnet build server/RebelDesk.Server.csproj --no-restore --configuration Release
+      - name: Test
+        run: |
+          if [ -d tests ]; then dotnet test tests/ --configuration Release --logger "trx"; else echo "No test projects yet."; fi
+      - name: Vulnerable packages
+        run: dotnet list server/RebelDesk.Server.csproj package --vulnerable --include-transitive || true
+
+  client:
+    name: Client (typecheck + build)
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: client } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: client/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - name: npm audit
+        run: npm audit --omit=dev || true
+
+  agent:
+    name: Agent (build, Windows)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet restore agent/RebelDesk.Agent.csproj
+      - run: dotnet build agent/RebelDesk.Agent.csproj --no-restore --configuration Release
+
+  codeql:
+    name: CodeQL (JavaScript + C#)
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['javascript', 'csharp']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        if: matrix.language == 'csharp'
+        with:
+          dotnet-version: '10.0.x'
+      - uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+      - name: Build server for CodeQL
+        if: matrix.language == 'csharp'
+        run: dotnet build server/RebelDesk.Server.csproj --configuration Release
+      - uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"

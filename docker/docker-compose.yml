@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  server:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.server
+    image: rebeldesk-server:dev
+    restart: unless-stopped
+    environment:
+      # Change these before exposing the server on the internet.
+      REBELDESK_JWT_KEY: "${REBELDESK_JWT_KEY:-dev-only-signing-key-CHANGE-BEFORE-PROD-32bytes}"
+      REBELDESK_TURN_SECRET: "${REBELDESK_TURN_SECRET:-dev-only-turn-secret-CHANGE}"
+      ASPNETCORE_ENVIRONMENT: "${ASPNETCORE_ENVIRONMENT:-Production}"
+      Turn__StunUris__0: "stun:${TURN_HOSTNAME:-turn.localhost}:3478"
+      Turn__TurnUris__0: "turn:${TURN_HOSTNAME:-turn.localhost}:3478?transport=udp"
+      Turn__TurnUris__1: "turn:${TURN_HOSTNAME:-turn.localhost}:3478?transport=tcp"
+    ports:
+      - "8080:8080"
+    volumes:
+      - server-data:/data
+    working_dir: /app
+    command: ["dotnet", "RebelDesk.Server.dll", "--Database:Path=/data/rebeldesk.db"]
+
+  coturn:
+    image: coturn/coturn:4.18.0
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./coturn/turnserver.conf:/etc/turnserver.conf:ro
+    # If you cannot use host networking, publish the following ports and pass
+    # --external-ip=<your public IP> in the config. See docs/SELF_HOSTING.md.
+    # ports:
+    #   - "3478:3478/udp"
+    #   - "3478:3478/tcp"
+    #   - "5349:5349/tcp"
+    #   - "49160-49200:49160-49200/udp"
+    command: ["-c", "/etc/turnserver.conf"]
+
+volumes:
+  server-data:

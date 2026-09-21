@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/agent/">
+    <Project Path="agent/RebelDesk.Agent.csproj" />
+  </Folder>
+  <Folder Name="/server/">
+    <Project Path="server/RebelDesk.Server.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/RebelDesk.Server.Tests/RebelDesk.Server.Tests.csproj" />
+  </Folder>
+</Solution>

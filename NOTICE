@@ -1,0 +1,51 @@
+RebelDesk
+Copyright (C) 2026 RebelDesk contributors
+
+Licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).
+See the LICENSE file for the full text.
+
+This project links against the following third-party components. Their
+licenses apply in addition to RebelDesk's. This list is best-effort and
+must be re-verified before any binary distribution.
+
+- SIPSorcery, SIPSorceryMedia.Abstractions
+  Source: https://github.com/sipsorcery-org/sipsorcery
+  License: BSD-3-Clause with an additional non-standard usage restriction
+           (see the upstream LICENSE file). Consumers must preserve the
+           notice. Downstream corporate license scanners may flag the
+           extra clause; legal review recommended before commercial
+           redistribution of RebelDesk binaries that include this
+           dependency.
+
+- SIPSorceryMedia.FFmpeg
+  Source: https://github.com/sipsorcery-org/SIPSorceryMedia.FFmpeg
+          (archived 2026-02-21; sources merged into sipsorcery repo)
+  License: LGPL-2.1
+
+- FFmpeg (libavcodec, libavformat, libavutil, libswscale, libswresample)
+  Source: https://ffmpeg.org
+  License: LGPL-2.1 by default. Builds compiled with --enable-gpl or
+           linked against libx264 are GPL-2.0-or-later. RebelDesk
+           requires an LGPL FFmpeg build unless the AGPL host and all
+           combined works remain GPL-compatible.
+
+- Vortice.Windows
+  Source: https://github.com/amerkoleci/Vortice.Windows
+  License: MIT
+
+- coturn
+  Source: https://github.com/coturn/coturn
+  License: BSD-3-Clause
+
+- ASP.NET Core, .NET runtime
+  Source: https://github.com/dotnet/aspnetcore, https://github.com/dotnet/runtime
+  License: MIT
+
+- React, Vite, TypeScript, react-i18next
+  Sources: https://github.com/facebook/react, https://github.com/vitejs/vite,
+           https://github.com/microsoft/TypeScript, https://github.com/i18next/react-i18next
+  License: MIT (react, vite, react-i18next); Apache-2.0 (TypeScript)
+
+- CsWin32
+  Source: https://github.com/microsoft/CsWin32
+  License: MIT

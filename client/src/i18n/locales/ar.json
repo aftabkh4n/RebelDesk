@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "language": "ar",
+    "direction": "rtl",
+    "needs-review": true,
+    "note": "Machine-translated seed. Must be reviewed by a native Arabic speaker before v1.0."
+  },
+  "app": {
+    "title": "RebelDesk",
+    "tagline": "سطح مكتب بعيد ذاتي الاستضافة"
+  },
+  "nav": {
+    "devices": "الأجهزة",
+    "logout": "تسجيل الخروج",
+    "language": "اللغة"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "email": "البريد الإلكتروني",
+    "displayName": "الاسم الظاهر",
+    "password": "كلمة المرور",
+    "submit": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "haveAccount": "هل لديك حساب بالفعل؟",
+    "noAccount": "جديد هنا؟",
+    "signInInstead": "تسجيل الدخول بدلاً من ذلك",
+    "createInstead": "إنشاء حساب",
+    "errors": {
+      "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+      "emailInUse": "هذا البريد الإلكتروني مسجل بالفعل.",
+      "passwordTooShort": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.",
+      "generic": "حدث خطأ ما. حاول مرة أخرى."
+    }
+  },
+  "devices": {
+    "title": "أجهزتك",
+    "empty": "لا توجد أجهزة مقترنة بعد. أضف واحداً أدناه.",
+    "online": "متصل",
+    "offline": "غير متصل",
+    "connect": "بدء الجلسة",
+    "connecting": "جاري طلب الجلسة…",
+    "revoke": "إلغاء الاقتران",
+    "confirmRevoke": "إلغاء اقتران هذا الجهاز؟ سيفقد الوكيل الوصول فوراً.",
+    "addTitle": "اقتران جهاز جديد",
+    "addHint": "قم بتثبيت وكيل RebelDesk على جهاز Windows الذي تريد التحكم به، ثم أدخل هذا الرمز عندما يطلب منك ذلك.",
+    "generateCode": "إنشاء رمز اقتران",
+    "codeExpires": "ينتهي في {{time}}",
+    "copyCode": "نسخ"
+  },
+  "session": {
+    "connecting": "الاتصال بـ {{name}}…",
+    "waitingApproval": "في انتظار الموافقة على المضيف…",
+    "connected": "متصل",
+    "reconnecting": "إعادة الاتصال…",
+    "disconnect": "إنهاء الجلسة",
+    "endedByHost": "أنهى المضيف الجلسة.",
+    "endedByViewer": "لقد أنهيت الجلسة.",
+    "rejected": "رفض المضيف هذه الجلسة.",
+    "agentOffline": "المضيف غير متصل. حاول مرة أخرى لاحقاً.",
+    "fullscreen": "ملء الشاشة",
+    "inputBlocked": "انقر على منطقة الشاشة لتفعيل الإدخال.",
+    "unattendedWarning": "اطلب من المضيف أن يكون حاضراً. يتطلب RebelDesk موافقة صريحة على المضيف."
+  },
+  "language": {
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français",
+    "nl": "Nederlands",
+    "ar": "العربية"
+  }
+}

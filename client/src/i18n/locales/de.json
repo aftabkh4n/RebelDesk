@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "language": "de",
+    "needs-review": true,
+    "note": "Machine-translated seed. Must be reviewed by a native German speaker before v1.0."
+  },
+  "app": {
+    "title": "RebelDesk",
+    "tagline": "Selbst gehosteter Fernzugriff"
+  },
+  "nav": {
+    "devices": "Geräte",
+    "logout": "Abmelden",
+    "language": "Sprache"
+  },
+  "login": {
+    "title": "Anmelden",
+    "email": "E-Mail",
+    "displayName": "Anzeigename",
+    "password": "Passwort",
+    "submit": "Anmelden",
+    "register": "Konto erstellen",
+    "haveAccount": "Bereits ein Konto?",
+    "noAccount": "Neu hier?",
+    "signInInstead": "Stattdessen anmelden",
+    "createInstead": "Konto erstellen",
+    "errors": {
+      "invalidCredentials": "E-Mail oder Passwort ist falsch.",
+      "emailInUse": "Diese E-Mail ist bereits registriert.",
+      "passwordTooShort": "Das Passwort muss mindestens 8 Zeichen lang sein.",
+      "generic": "Etwas ist schief gelaufen. Bitte erneut versuchen."
+    }
+  },
+  "devices": {
+    "title": "Ihre Geräte",
+    "empty": "Noch keine gekoppelten Geräte. Fügen Sie unten eines hinzu.",
+    "online": "Online",
+    "offline": "Offline",
+    "connect": "Sitzung starten",
+    "connecting": "Sitzung wird angefordert…",
+    "revoke": "Widerrufen",
+    "confirmRevoke": "Dieses Gerät widerrufen? Der Agent verliert sofort den Zugriff.",
+    "addTitle": "Neues Gerät koppeln",
+    "addHint": "Installieren Sie den RebelDesk-Agenten auf dem Windows-Computer, den Sie steuern möchten, und geben Sie diesen Code ein, wenn danach gefragt wird.",
+    "generateCode": "Kopplungscode erzeugen",
+    "codeExpires": "Läuft ab um {{time}}",
+    "copyCode": "Kopieren"
+  },
+  "session": {
+    "connecting": "Verbinde mit {{name}}…",
+    "waitingApproval": "Warte auf Freigabe am Host…",
+    "connected": "Verbunden",
+    "reconnecting": "Verbindung wird wiederhergestellt…",
+    "disconnect": "Sitzung beenden",
+    "endedByHost": "Der Host hat die Sitzung beendet.",
+    "endedByViewer": "Sie haben die Sitzung beendet.",
+    "rejected": "Der Host hat diese Sitzung abgelehnt.",
+    "agentOffline": "Der Host ist offline. Bitte später erneut versuchen.",
+    "fullscreen": "Vollbild",
+    "inputBlocked": "Klicken Sie in den Bildbereich, um die Eingabe zu aktivieren.",
+    "unattendedWarning": "Bitten Sie den Host, anwesend zu sein. RebelDesk verlangt eine ausdrückliche Freigabe am Host."
+  },
+  "language": {
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français",
+    "nl": "Nederlands",
+    "ar": "العربية"
+  }
+}

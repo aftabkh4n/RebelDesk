@@ -1,0 +1,8 @@
+{
+  "name": "rebeldesk-scripts",
+  "type": "commonjs",
+  "private": true,
+  "dependencies": {
+    "@microsoft/signalr": "^9.0.10"
+  }
+}

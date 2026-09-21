@@ -1,0 +1,90 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --muted: #8a94a6;
+  --fg: #e9edf5;
+  --accent: #4a8cff;
+  --ok: #35b878;
+  --warn: #d17b00;
+  --err: #d64545;
+  --border: #232733;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Arabic", sans-serif;
+}
+[dir="rtl"] { direction: rtl; text-align: right; }
+
+.app-nav {
+  display: flex; align-items: center; gap: 12px; padding: 10px 20px;
+  background: var(--panel); border-bottom: 1px solid var(--border);
+}
+.app-nav .brand { color: var(--fg); font-weight: 700; text-decoration: none; }
+.app-nav .spacer { flex: 1; }
+.app-nav .user { color: var(--muted); }
+.lang-switcher { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+.lang-switcher select { background: var(--panel); color: var(--fg); border: 1px solid var(--border); border-radius: 6px; padding: 4px 6px; }
+
+button, .button {
+  background: var(--accent); color: white; border: 0; border-radius: 6px;
+  padding: 8px 12px; cursor: pointer; text-decoration: none; display: inline-block;
+}
+button:hover, .button:hover { filter: brightness(1.1); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+button.link { background: transparent; color: var(--accent); padding: 0; }
+
+.app-main { padding: 24px; max-width: 960px; margin: 0 auto; }
+
+.auth-container { max-width: 380px; margin: 40px auto; text-align: center; }
+.tagline { color: var(--muted); }
+.auth-form { display: flex; flex-direction: column; gap: 10px; text-align: start; }
+.auth-form label { display: flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: 13px; }
+.auth-form input {
+  background: var(--panel); color: var(--fg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 8px 10px; font-size: 14px;
+}
+.error { color: var(--err); }
+
+.devices-page h1, .session-page h1 { margin-top: 0; }
+.muted { color: var(--muted); }
+.device-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.device {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px 16px; display: flex; align-items: center; gap: 12px;
+}
+.device .device-name { flex: 1; display: flex; align-items: center; gap: 10px; }
+.device .badge { background: #2a2f3a; padding: 2px 6px; border-radius: 4px; font-size: 12px; color: var(--muted); }
+.device .status.ok { color: var(--ok); }
+.device .status.off { color: var(--muted); }
+.device .device-actions { display: flex; gap: 8px; }
+.device .device-actions button { background: #2a2f3a; color: var(--fg); }
+
+.pairing { margin-top: 32px; }
+.pairing-form { display: flex; gap: 10px; margin-top: 8px; }
+.pairing-form input {
+  flex: 1; background: var(--panel); color: var(--fg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 8px 10px;
+}
+.pairing-result { margin-top: 12px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pairing-result code {
+  background: var(--panel); border: 1px solid var(--border); padding: 8px 14px;
+  font-size: 20px; letter-spacing: 2px; border-radius: 6px;
+}
+
+.session-page { max-width: none; margin: 0; padding: 0; }
+.session-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 14px; background: var(--panel); border-bottom: 1px solid var(--border);
+}
+.session-header .status { color: var(--muted); }
+.session-stage { position: relative; background: black; height: calc(100vh - 96px); display: grid; place-items: center; }
+.session-stage video { max-width: 100%; max-height: 100%; }
+.input-hint {
+  position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,0.7); padding: 6px 12px; border-radius: 6px; color: var(--fg);
+  pointer-events: none;
+}

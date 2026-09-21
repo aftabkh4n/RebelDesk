@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "language": "nl",
+    "needs-review": true,
+    "note": "Machine-translated seed. Must be reviewed by a native Dutch speaker before v1.0."
+  },
+  "app": {
+    "title": "RebelDesk",
+    "tagline": "Zelf-gehost extern bureaublad"
+  },
+  "nav": {
+    "devices": "Apparaten",
+    "logout": "Afmelden",
+    "language": "Taal"
+  },
+  "login": {
+    "title": "Inloggen",
+    "email": "E-mail",
+    "displayName": "Weergavenaam",
+    "password": "Wachtwoord",
+    "submit": "Inloggen",
+    "register": "Account aanmaken",
+    "haveAccount": "Al een account?",
+    "noAccount": "Nieuw hier?",
+    "signInInstead": "In plaats daarvan inloggen",
+    "createInstead": "Account aanmaken",
+    "errors": {
+      "invalidCredentials": "E-mail of wachtwoord is onjuist.",
+      "emailInUse": "Dit e-mailadres is al in gebruik.",
+      "passwordTooShort": "Wachtwoord moet minstens 8 tekens lang zijn.",
+      "generic": "Er is iets misgegaan. Probeer opnieuw."
+    }
+  },
+  "devices": {
+    "title": "Uw apparaten",
+    "empty": "Nog geen gekoppelde apparaten. Voeg er hieronder een toe.",
+    "online": "Online",
+    "offline": "Offline",
+    "connect": "Sessie starten",
+    "connecting": "Sessie aanvragen…",
+    "revoke": "Intrekken",
+    "confirmRevoke": "Dit apparaat intrekken? De agent verliest onmiddellijk toegang.",
+    "addTitle": "Nieuw apparaat koppelen",
+    "addHint": "Installeer de RebelDesk-agent op de Windows-computer die u wilt bedienen en voer deze code in wanneer daarom wordt gevraagd.",
+    "generateCode": "Koppelingscode genereren",
+    "codeExpires": "Verloopt op {{time}}",
+    "copyCode": "Kopiëren"
+  },
+  "session": {
+    "connecting": "Verbinden met {{name}}…",
+    "waitingApproval": "Wachten op goedkeuring op de host…",
+    "connected": "Verbonden",
+    "reconnecting": "Opnieuw verbinden…",
+    "disconnect": "Sessie beëindigen",
+    "endedByHost": "De host heeft de sessie beëindigd.",
+    "endedByViewer": "U heeft de sessie beëindigd.",
+    "rejected": "De host heeft deze sessie geweigerd.",
+    "agentOffline": "De host is offline. Probeer later opnieuw.",
+    "fullscreen": "Volledig scherm",
+    "inputBlocked": "Klik in het schermgebied om invoer in te schakelen.",
+    "unattendedWarning": "Vraag de host aanwezig te zijn. RebelDesk vereist expliciete goedkeuring op de host."
+  },
+  "language": {
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français",
+    "nl": "Nederlands",
+    "ar": "العربية"
+  }
+}

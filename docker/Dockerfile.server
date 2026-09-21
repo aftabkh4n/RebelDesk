@@ -1,0 +1,16 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /src
+COPY server/RebelDesk.Server.csproj server/
+RUN dotnet restore server/RebelDesk.Server.csproj
+COPY server/ server/
+RUN dotnet publish server/RebelDesk.Server.csproj -c Release -o /app/publish --no-self-contained
+
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
+WORKDIR /app
+RUN groupadd --system rebeldesk && useradd --system --gid rebeldesk --home /app rebeldesk \
+    && mkdir -p /data && chown -R rebeldesk:rebeldesk /data
+COPY --from=build --chown=rebeldesk:rebeldesk /app/publish/ .
+USER rebeldesk
+EXPOSE 8080
+ENV ASPNETCORE_URLS=http://0.0.0.0:8080
+ENTRYPOINT ["dotnet", "RebelDesk.Server.dll"]

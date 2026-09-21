@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "RebelDesk",
+    "tagline": "Self-hosted remote desktop"
+  },
+  "nav": {
+    "devices": "Devices",
+    "logout": "Sign out",
+    "language": "Language"
+  },
+  "login": {
+    "title": "Sign in",
+    "email": "Email",
+    "displayName": "Display name",
+    "password": "Password",
+    "submit": "Sign in",
+    "register": "Create an account",
+    "haveAccount": "Already have an account?",
+    "noAccount": "New here?",
+    "signInInstead": "Sign in instead",
+    "createInstead": "Create an account",
+    "errors": {
+      "invalidCredentials": "Email or password is incorrect.",
+      "emailInUse": "That email is already registered.",
+      "passwordTooShort": "Password must be at least 8 characters.",
+      "generic": "Something went wrong. Try again."
+    }
+  },
+  "devices": {
+    "title": "Your devices",
+    "empty": "No paired devices yet. Add one below.",
+    "online": "Online",
+    "offline": "Offline",
+    "connect": "Start session",
+    "connecting": "Requesting session…",
+    "revoke": "Revoke",
+    "confirmRevoke": "Revoke this device? The agent will lose access immediately.",
+    "addTitle": "Pair a new device",
+    "addHint": "Install the RebelDesk agent on the Windows computer you want to control, then enter this code when it asks.",
+    "generateCode": "Generate pairing code",
+    "codeExpires": "Expires at {{time}}",
+    "copyCode": "Copy"
+  },
+  "session": {
+    "connecting": "Connecting to {{name}}…",
+    "waitingApproval": "Waiting for approval on the host…",
+    "connected": "Connected",
+    "reconnecting": "Reconnecting…",
+    "disconnect": "End session",
+    "endedByHost": "The host ended the session.",
+    "endedByViewer": "You ended the session.",
+    "rejected": "The host rejected this session.",
+    "agentOffline": "The host is offline. Try again later.",
+    "fullscreen": "Fullscreen",
+    "inputBlocked": "Click the screen area to enable input.",
+    "unattendedWarning": "Ask the host to be present. RebelDesk requires explicit approval on the host."
+  },
+  "language": {
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français",
+    "nl": "Nederlands",
+    "ar": "العربية"
+  }
+}
