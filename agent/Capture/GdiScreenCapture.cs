@@ -53,8 +53,13 @@ public sealed class GdiScreenCapture : IScreenCapture
     {
         var screenW = GetSystemMetrics(SM_CXSCREEN);
         var screenH = GetSystemMetrics(SM_CYSCREEN);
-        Width = Math.Min(screenW, _maxWidth);
-        Height = Math.Min(screenH, _maxHeight);
+        // VP8 (and most block-based codecs) require dimensions to be multiples of 16.
+        // Crop to the largest multiple-of-16 that fits within the requested cap and the
+        // real screen size. The dropped 0-15 px at the right/bottom edges are documented.
+        Width = (Math.Min(screenW, _maxWidth) / 16) * 16;
+        Height = (Math.Min(screenH, _maxHeight) / 16) * 16;
+        if (Width < 16 || Height < 16)
+            throw new InvalidOperationException($"Capture size {Width}x{Height} too small; screen {screenW}x{screenH}.");
         _bgraBuf = new byte[Width * Height * 4];
 
         using var bmp = new Bitmap(Width, Height, PixelFormat.Format32bppArgb);

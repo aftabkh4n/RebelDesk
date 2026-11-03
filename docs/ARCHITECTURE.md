@@ -49,6 +49,7 @@ SignalR gives us server-side group management (device presence, per-session view
 - Works everywhere Windows works, including inside an RDP session (which the initial development host is).
 - Simple, no D3D device management.
 - Slow — bounded to ~10–15 fps at 1080p. DXGI Desktop Duplication (v0.3) is the fix.
+- Capture size is rounded down to a multiple of 16 for the VP8 encoder, so up to 15 px at the right/bottom edges are not streamed (e.g. 1920×1080 → 1920×1072).
 
 ## Files that carry security semantics
 
