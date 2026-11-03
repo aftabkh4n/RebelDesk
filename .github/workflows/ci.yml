@@ -25,7 +25,7 @@ jobs:
         run: dotnet build server/RebelDesk.Server.csproj --no-restore --configuration Release
       - name: Test
         run: |
-          if [ -d tests ]; then dotnet test tests/ --configuration Release --logger "trx"; else echo "No test projects yet."; fi
+          if [ -d tests ]; then dotnet test tests/RebelDesk.Server.Tests/RebelDesk.Server.Tests.csproj --configuration Release --logger "trx"; else echo "No test projects yet."; fi
       - name: Vulnerable packages
         run: dotnet list server/RebelDesk.Server.csproj package --vulnerable --include-transitive || true
 
