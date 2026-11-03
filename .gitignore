@@ -50,7 +50,7 @@ secrets/
 turnserver.local.conf
 
 # Data
-data/
+/data/
 *.db
 *.db-shm
 *.db-wal
