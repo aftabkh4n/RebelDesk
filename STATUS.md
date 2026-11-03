@@ -24,7 +24,7 @@ Client build: `npm run build` produces a 395 KB gzipped-122 KB bundle with all f
 
 Agent build: `dotnet build agent/` succeeds against .NET 10 on `net10.0-windows`, zero warnings, zero errors.
 
-Server build: `dotnet build server/` succeeds against .NET 10 with two low-severity transitive advisories (`Microsoft.OpenApi 2.0.0`, `SQLitePCLRaw.lib.e_sqlite3 2.1.10`) documented below.
+Server build: `dotnet build server/` succeeds against .NET 10 with no vulnerable packages (`dotnet list package --vulnerable --include-transitive` is clean).
 
 ## Implemented and automatically tested
 _(unit/integration tests exist and pass in CI)_
@@ -55,7 +55,7 @@ _(unit/integration tests exist and pass in CI)_
 
 - **No second machine and no interactive display.** The controlled Windows host and the controlling browser are both this development host. The remaining "compiled, not verified" rows above require either a real user clicking the WinForms dialog and driving a browser, or a headless Chromium harness. Neither was in scope for this session.
 - **SIPSorcery 8.x has two open high-severity advisories** (`GHSA-28gm-jrmw-xx93`, `GHSA-jwjp-4649-v8jp`). RebelDesk uses 10.0.16 which is not listed in either advisory, but the CVE feed for 10.x should be watched.
-- **`Microsoft.OpenApi 2.0.0` and `SQLitePCLRaw.lib.e_sqlite3 2.1.10`** carry low-severity NU1903 warnings when transitively pulled. `Swashbuckle.AspNetCore` was removed for this reason; the SQLite package still comes in via EF Core and will be pinned once EF Core ships an updated dep in a stable release.
+- **Resolved: NU1903 advisories.** `Swashbuckle.AspNetCore` was removed (`Microsoft.OpenApi 2.0.0`); EF Core Sqlite 9.0.22 pulls `SQLitePCLRaw.lib.e_sqlite3` 2.1.13 (GHSA-2m69-gcr7-jv3q) and SignalR Client 9.0.22 pulls a fixed `Microsoft.AspNetCore.SignalR.Common` (GHSA-334f-vvp4-7g6p).
 
 ## Performance targets (NOT achieved yet)
 
